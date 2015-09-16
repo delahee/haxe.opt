@@ -9,7 +9,7 @@ Requirements :
 - target cpp
 - target swf
 
-Gains :
+Benefits :
 - Code will not generate small allocations
 - Instances are stack variables which are usually stored in registers of very fast data cache. The code may execute way faster.
  
