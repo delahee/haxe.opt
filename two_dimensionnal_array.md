@@ -10,7 +10,7 @@ will generate one array comprising two arrays.
 
 ```
 Severity:
-- Very variable depending on the target cache size, branch predictor effectiveness etc... sometime the optimising will not produce results. On desktop the gain will be negligible, on mobile, it can be a game changer. 
+- Very variable depending on the target cache size, branch predictor effectiveness etc... sometime the optimising will not produce results. On desktop the gain will be negligible, on mobile, it _can_ be a game changer. 
 
 Problem:
 - Each array will generate a new pointer leading in cache misses at array accesss time
@@ -25,6 +25,11 @@ Solution:
 
 Requirement:
 - All target except js, where haxe.ds.vector is backed by array
+ 
+Benefits :
+- Better cache coherency
+- Less allocations
+
 
 Snippet :
 
