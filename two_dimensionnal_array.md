@@ -1,7 +1,7 @@
 
 Abstract :
 
-There are some issues processing bi dimensionnal array under Array<Array<T>>. In a more general way, nearly all languages have problems because this structure of data generates nested arrays.
+There are some issues processing bi dimensionnal array aka Array of Arrays. In a more general way, nearly all languages have problems because this structure of data generates nested arrays, thus breaking data locality
 
 ```
 var a :Array<Array<Float>> = [[],[]]
