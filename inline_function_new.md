@@ -1,12 +1,13 @@
 
-TODO: contact the hf about the problems leveraged by this content
+Status : Ok for cpp and swf, discussion with Haxe Foundation about how to proceed for js.
 
 Abstract : 
 
 For small objects, without static analyzer the compiler can actually optimize whole classes instances so that they get inlined into local variables.
 
 Requirements : 
-- None
+- target cpp
+- target swf
 
 Gains :
 - Code will not generate small allocations
@@ -24,7 +25,7 @@ Example :
 }
 ```
 
-Proof : 
+partial proof : 
 http://try.haxe.org/#42EBa
 
 
