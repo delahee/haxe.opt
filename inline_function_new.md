@@ -71,7 +71,7 @@ class Test {
 }
 ```
 
-Partial proof : 
+Snippet : 
 http://try.haxe.org/#42EBa
 
 
