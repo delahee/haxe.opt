@@ -1,4 +1,6 @@
 
+TODO: contact the hf about the problems leveraged by this content
+
 Abstract : 
 
 For small objects, without static analyzer the compiler can actually optimize whole classes instances so that they get inlined into local variables.
@@ -21,3 +23,8 @@ Example :
     }
 }
 ```
+
+Proof : 
+http://try.haxe.org/#42EBa
+
+
