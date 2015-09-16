@@ -1,0 +1,24 @@
+Status:
+
+Abstract :
+
+Haxe has some issues processing bi dimmensionnal array under Array<Array<Float>>. In a more general way, nearly all languages have problems because this structure of data generates nested arrays.
+
+```
+var a :Array<Array<Float>> = [[],[]]
+
+will generate one array comprising two arrays.
+
+```
+
+Problem:
+- Each array will generate a new pointer leading in cache misses at array accesss time
+- Arrays are resizable leading in branch tests and bracnh misses, on mobile the branch predictor is bad so slow down will ensue
+- As of today, Haxe will generate Array<Dynamic> at least on cpp so slowdown will ensue.
+
+Solution:
+- Use haxe.ds.Vector of one dimension whenever possible.
+- If one dimension resizing is necessary you can fallback to linear Array of dimension * (scaling dimension )
+- If Both dimension resizing is needed, you are screwed and should engineer something :)
+
+Proof:
