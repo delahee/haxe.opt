@@ -20,7 +20,7 @@ All targets. Lists are fully cross platforms.
 - Array have a wider palette of uses
 
 ### Cons :
-- Array resizing may imply array regrow and copy which is very costy in theory. In practice, as its backed by native functions, there cost are barely to be seen.
+- Array resizing may imply array regrow and copy which is very costy in theory. In practice, as its backed by native functions, these cost are usually bogus BUT some use cases will trigger them ( .unshift ).
 - Lose the ergonomic simplicity of lists.
 
 ### Benchmark :
