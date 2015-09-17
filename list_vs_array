@@ -1,0 +1,24 @@
+## Swithing lists to Arrays
+
+### Abstract
+There are some discussions here and there about how crappy are lists, somehow Simn said he never get why lists (need exact quote). There seems to be convergence over how crappy they are. BUT there are some misconceptions and old history carried back, as lists have been modernized a lot in a few years.
+Let's sumup how they can impact your code. The topic of this note is the : should we switch from list to arrays for every time critical tasks.
+
+### Requirements
+All targets. Lists are fully cross platforms.
+
+### Facts
+- List were generating allocations through traversal. This is no longer the case.
+- Most list Lambda traversal are not inlined.
+- Every list move create a new array nesting the previous one.
+- List are iteration removal safe
+
+### Pros :
+- Less small array allocations
+- Array have a wider palette of uses
+
+### Cons :
+- Array resizing may imply array regrow and copy which is very costy in theory. In practice, as its backed by native functions, there cost are barely to be seen.
+- Lose the ergonomic simplicity of lists.
+
+### Benchmark :
