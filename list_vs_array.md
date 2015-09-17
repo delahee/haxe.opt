@@ -25,7 +25,7 @@ All targets. Lists are fully cross platforms.
 
 ### Benchmark :
 - Benching traversal : http://try.haxe.org/#63c01
-  js or swf, At low data size, results are indistinguishable, one has to go around 500k items to really have numera differences. Good to know that each run show different numbers, this is simply because those structures are so lightweight, that cache misses, and GC hit will just break timing. Around 500k hit, array become earnestly faster but calling this a "real world use case" would be preposterous.
+  js or swf, At low data size, results are indistinguishable, one has to go around 500k items to really have numera differences. Good to know that each run show different numbers, this is simply because those structures are so lightweight, that cache misses, and GC hit will just break timing. Around 500k hit, array become earnestly faster ( by factor 1.5) but calling this a "real world use case" would be preposterous.
 
 - Insertions : 
   - Random insert before /after : http://try.haxe.org/#35242
