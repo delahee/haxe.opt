@@ -3,8 +3,8 @@
 ##TODO : add something about the cpp target
 
 ### Abstract
-There are some discussions here and there about how crappy are lists, somehow Simn said he never get why lists (need exact quote). There seems to be convergence over how crappy they are. BUT there are some misconceptions and old history carried back, as lists have been modernized a lot in a few years.
-Let's sumup how they can impact your code. The topic of this note is the : should we switch from list to arrays for every time critical tasks.
+There are some discussions here and there about how crappy are lists, somehow Simn said he never get why lists (need exact quote). There seems to be convergence over how crappy they are. BUT there are some misconceptions and old history carried back, as lists have been modernized a lot in a few years. On the haxe compiler, I used the iterator wan't even inlined.
+Let's sumup how they can impact your code. So should we switch from list to arrays for every time critical tasks ?
 
 ### Requirements
 All targets. Lists are fully cross platforms.
@@ -34,6 +34,6 @@ All targets. Lists are fully cross platforms.
   Once again, array becomes consistently faster ( by a 3 factor ) at very high numbers.
 
 ### Conclusions
-Well List and Arrays have clearly defined semantics and very different use cases. Latest efforts to inline List properly have bear fruits and they are now very competitive. This is a good lesson. List are now okay to work with and could be changed to array if the need is real. 
+List and Arrays have clearly defined semantics and very different use cases. Latest efforts to inline List properly have bear fruits and they are now very competitive. This is a good lesson. List's are now okay to work with and could be changed to array if the need is real. If the question is should we switch, I can fairly answer that if your use case is not rethinked, then you might waste you time. As always, measuring for your use is the only valid answer.
 Congrat to the team to fixing this historical problem !
 
