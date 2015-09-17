@@ -30,7 +30,7 @@ All targets. Lists are fully cross platforms.
 - Insertions : 
   - Random insert before /after : http://try.haxe.org/#35242
   On js and swf, array clearly loses ( by a 10 factor ). Js is much slower than swf on my chrome.
-- Insert at "designed position": http://try.haxe.org/#903dd
+  - Insert at "designed position": http://try.haxe.org/#903dd
   Once again, array becomes consistently faster ( by a 3 factor ) at very high numbers.
 
 ### Conclusions
