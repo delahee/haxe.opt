@@ -1,18 +1,20 @@
 
 "I read your long postmortem about your #ld34 game. It'd be awesome to find out more how you managed to keep the GC at bay"
+
 "I'm mainly working with @MonoGameTeam lately, but I used Haxe and hxcpp's GC has been a big problem."
+
 "many haxe based frameworks do a lot of allocations during their rendering cycles, and the lack of struct doesn't help as well"
 
 Hi Valeria !
 
-You are totally right, most haxe frameworks are not production ready, especially for mobile, their allocation policy and some compiler bugs do combine for creepy situations.
+You are **totally right**, most haxe frameworks are not large scale production ready, especially for mobile, their allocation policy and some compiler bugs do combine for creepy situations. I consider Double Kick Heroes is large scale since there are hundreds of sprite at stake.
 They are usually "very good at rendering bunnies but not at real large scale game" management ( quote form Hugh Sanderson himself )
 
 Still, with the motion twin team, we had this game ( https://play.google.com/store/apps/details?id=com.motiontwin.monsterhotel&hl=fr ) out on mobile.
 It manages tons of sprites with many layers without major gc stalls. It runs batches of 15000k sprites on nexus 7 without stalls.
 Same goes for Double Kick Heroes, the game exhibit very few GC stalls
 
-So how did we get to here ? 
+So how did we ( Pascal Peridont and me from the motion twin team ) get here ? 
 
 1- We used the "inline function new" construct a lot, it allows whole classes to go as local variables. This make these classes vent faster than C structs as locals are register rather than stack vars.
 BUT there was a very major Haxe bug, that waits to be solved that impeach this construct to function properly during a long time. 
@@ -25,8 +27,7 @@ adding stack objects and better allocation policies.
 We also spent time converting ALL dynamic access to inline classes.
 Dynamic acceses are the root of all haxe evil.
 
-3- We profiled a lot with scout and cpp profilers, and i am used to the profiling jobs, i did it on consoles for years, so I developed a sense on 
-how to detect bottleneck and cache misses. We mostly use micro benching (see https://github.com/delahee/h3d/blob/master/hxd/Profiler.hx and https://github.com/delahee/h3d/blob/master/hxd/DrawProfiler.hx) rather than stack benching because eliminating what takes overall time usually hints for big problems.
+3- We profiled a lot with scout and cpp profilers, and i am used to the profiling jobs, i did it on consoles for years, so I developed a sense on how to detect bottleneck and cache misses. We mostly use micro benching (see https://github.com/delahee/h3d/blob/master/hxd/Profiler.hx and https://github.com/delahee/h3d/blob/master/hxd/DrawProfiler.hx) rather than stack benching because eliminating what takes overall time usually hints for big problems.
 
 4- We tracked all allocations with scout and eliminated systemic allocations ie allocations that would occur each frame without render graph changes.
 
@@ -35,6 +36,8 @@ It was really a very painful and stressful and frustrating process since most of
 In the end we end up making fixes on our sit and not just sitting for the team to fix.
 
 6- You can read the whole https://github.com/delahee/haxe.opt articles, maybe you'll learn something useful.
+
+7- You can contact me, I can make consulting missions  about these topics and debugging and stuff like that.
 
 For mobile, so far the only production framework I used is h3d, heaps is really desktop/gles3 and I suspect Kha could be good but it's very low level.
 I suspect monogame + haxe with "inline function new" to be a real blessing :)
