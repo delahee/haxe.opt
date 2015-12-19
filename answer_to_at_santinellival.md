@@ -29,7 +29,7 @@ There is an article about how to use it here : https://github.com/delahee/haxe.o
 4- We tracked all allocations with scout and eliminated **systemic allocations** ie allocations that would occur each frame without render graph changes.
 
 5- Very sadly, we spent a lot of time with the **compiler team** to have various allocations removed and inline calls optimised. 
-It was really a **very painful and stressful and frustrating process** since most of the time, we would call on an issue and it would only be solved when **one of the compiler team would make use of the solution**. **In the end, we end up making fixes on our side and not just sitting for the team to fix**.
+It was really a **very painful and stressful and frustrating process** since most of the time, we would call on an issue and it would only be solved when **one of the compiler team would make use of the solution, years after**. **In the end, we end up making fixes on our side and not just sitting for the team to fix**. At least that is how I lived the situation, maybe they would say that they waited for me to get involved but just the time to compile haxe, make fixes and test results in a x8 time factor adn pull request merging back and forth that could take literally years. Hence our shortcuts.
 
 6- You can read the whole https://github.com/delahee/haxe.opt articles, maybe you'll learn something useful.
 
