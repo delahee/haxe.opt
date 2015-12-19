@@ -9,7 +9,7 @@ You are totally right, most haxe frameworks are not production ready, especially
 They are usually "very good at rendering bunnies but not at real large scale game" management ( quote form Hugh Sanderson himself )
 
 Still, with the motion twin team, we had this game ( https://play.google.com/store/apps/details?id=com.motiontwin.monsterhotel&hl=fr ) out on mobile.
-It manages tons of sprites with many layers without major gc stalls. 
+It manages tons of sprites with many layers without major gc stalls. It runs batches of 15000k sprites on nexus 7 without stalls.
 Same goes for Double Kick Heroes, the game exhibit very few GC stalls
 
 So how did we get to here ? 
@@ -20,7 +20,7 @@ https://github.com/HaxeFoundation/haxe/pull/4558
 
 There is an article about how to use it here : https://github.com/delahee/haxe.opt/blob/master/inline_function_new.md
 
-2- We took weeks to profile the haxe compiler output properly, and forked the ancestor of heaps, h3d, i spent time tuning it and removing allocation, 
+2- We took weeks to profile the haxe compiler output properly, and forked the ancestor of heaps, h3d, we spent time tuning it and removing allocation, 
 adding stack objects and better allocation policies. 
 We also spent time converting ALL dynamic access to inline classes.
 Dynamic acceses are the root of all haxe evil.
