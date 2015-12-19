@@ -10,11 +10,9 @@ Hi Valeria !
 You are **totally right**, many haxe frameworks are not large scale production ready, **especially for mobile**, desktop is usually good, their allocation policy and some compiler bugs do combine for creepy situations. I consider Double Kick Heroes is large scale since there are hundreds of sprite at stake.
 They are usually "very good at rendering bunnies but not at real large scale game" management ( quote form Hugh Sanderson himself )
 
-Still, with the motion twin team, we had this game ( https://play.google.com/store/apps/details?id=com.motiontwin.monsterhotel&hl=fr ) out on mobile.
-It manages tons of sprites with many layers without major gc stalls. It runs batches of 15000k sprites on nexus 7 without stalls.
-Same goes for Double Kick Heroes, the game exhibit very few GC stalls
+Still, with the motion twin team, we had this game ( https://play.google.com/store/apps/details?id=com.motiontwin.monsterhotel&hl=fr ) out on mobile. It manages tons of sprites with many layers without major gc stalls. It is running on h3d. H3d runs batches of 15000k sprites on nexus 7 without stalls. Same goes for Double Kick Heroes, the game exhibit very few GC stalls.
 
-So how did we ( Pascal Peridont and me from the motion twin team ) get here ? 
+So how did we ( Pascal Peridont and me from the motion twin team ) get here with h3d ? 
 
 1- We used the "inline function new" construct a lot, it allows whole classes to go as local variables. This make these classes vent faster than C structs as locals are register rather than stack vars.
 BUT there was a very major Haxe bug, that waits to be solved that impeach this construct to function properly during a long time. 
