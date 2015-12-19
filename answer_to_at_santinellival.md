@@ -24,7 +24,7 @@ There is an article about how to use it here : https://github.com/delahee/haxe.o
 
 2- We took **weeks** to profile the haxe compiler output properly, and forked the ancestor of heaps, h3d, we spent time tuning it and **removing allocation**, adding **local variables** objects and **better allocation policies**. Especially for **Byte Buffers in the GL manipulation api's** copies which crippled every haxe frameworks. We also spent time converting ALL dynamic access to inline classes. Dynamic acceses are the root of all haxe evil.
 
-3- We profiled a lot with scout and cpp profilers, and I am used to the profiling jobs, I did it on consoles for years, so I developed a sense on how to detect bottleneck and cache misses. We mostly use micro benching (see https://github.com/delahee/h3d/blob/master/hxd/Profiler.hx and https://github.com/delahee/h3d/blob/master/hxd/DrawProfiler.hx) rather than stack benching because eliminating what takes overall time usually hints for big problems.
+3- We profiled a lot with scout and cpp profilers, and I am used to the profiling jobs, I did it on consoles for years, so I developed a sense on how to detect bottleneck and cache misses. We mostly use **micro benching** (see https://github.com/delahee/h3d/blob/master/hxd/Profiler.hx and https://github.com/delahee/h3d/blob/master/hxd/DrawProfiler.hx) rather than stack benching because eliminating what takes overall time usually hints for big problems.
 
 4- We tracked all allocations with scout and eliminated **systemic allocations** ie allocations that would occur each frame without render graph changes.
 
@@ -33,7 +33,7 @@ It was really a **very painful and stressful and frustrating process** since mos
 
 6- You can read the whole https://github.com/delahee/haxe.opt articles, maybe you'll learn something useful.
 
-7- You can contact me, I can make consulting missions  about these topics and debugging and stuff like that.
+7- You can contact me, I can make work for hire missions  about these topics and debugging and stuff like that.
 
 For mobile, so far the only production framework I used is h3d,  I suspect Kha Mobile could be good but it's very low level.
 I suspect monogame + haxe with "inline function new" to be a real blessing :)
