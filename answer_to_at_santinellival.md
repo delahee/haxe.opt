@@ -7,7 +7,7 @@
 
 Hi Valeria !
 
-You are **totally right**, most haxe frameworks are not large scale production ready, especially for mobile, their allocation policy and some compiler bugs do combine for creepy situations. I consider Double Kick Heroes is large scale since there are hundreds of sprite at stake.
+You are **totally right**, many haxe frameworks are not large scale production ready, **especially for mobile**, desktop is usually good, their allocation policy and some compiler bugs do combine for creepy situations. I consider Double Kick Heroes is large scale since there are hundreds of sprite at stake.
 They are usually "very good at rendering bunnies but not at real large scale game" management ( quote form Hugh Sanderson himself )
 
 Still, with the motion twin team, we had this game ( https://play.google.com/store/apps/details?id=com.motiontwin.monsterhotel&hl=fr ) out on mobile.
