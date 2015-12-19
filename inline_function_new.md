@@ -1,9 +1,7 @@
 
-Status : Ok for cpp and swf, discussion with Haxe Foundation about how to proceed for js.
-
 Abstract : 
 
-For small objects, without static analyzer the compiler can actually optimize whole classes instances so that they get inlined into local variables.
+For small objects, without static analyzer the compiler can actually optimize whole classes instances so that they get inlined into local variables ( event faster than struct on cpp ).
 
 Requirements : 
 - target cpp
