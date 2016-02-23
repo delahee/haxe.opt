@@ -1,7 +1,7 @@
 ## Swithing Lists to Arrays ?
 
 ### Abstract
-There are some discussions here and there about how crappy are lists, somehow Simn said he never get why lists (need exact quote). There seems to be convergence over how crappy they are, even for very low volume of data. BUT there are some misconceptions and old history carried back, as lists have been modernized a lot in a few years. On the haxe compiler, I used the iterator wan't even inlined.
+There are some discussions here and there about how crappy are lists, somehow Simn said he never get why lists (need exact quote). There seems to be convergence over how crappy they are, even for very low volume of data. BUT there are some misconceptions and old history carried back, as lists have been modernized a lot in a few years. On the haxe compiler, iterator wasn't even inlined and triggered allocations...
 Let's sumup how they can impact your code. So should we switch from list to arrays for every time critical tasks ?
 
 ### Requirements
