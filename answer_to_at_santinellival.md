@@ -1,4 +1,6 @@
 
+**warning : This file as updates in its footer to reflect current haxe development**
+
 "I read your long postmortem about your #ld34 game. It'd be awesome to find out more how you managed to keep the GC at bay"
 
 "I'm mainly working with @MonoGameTeam lately, but I used Haxe and hxcpp's GC has been a big problem."
@@ -38,6 +40,8 @@ I suspect monogame + haxe with "inline function new" to be a real blessing :)
 
 In the end, I totally get that an indie team that do not want to get into profiling could skip haxe frameworks. 
 They are really powerful but really require you to get engage with the team and be ready to hack bits here and there even in the compiler to get the job done.
+
+Update 1: inline function new is now fixed and unit tested so enjoy! 
 
 
 
