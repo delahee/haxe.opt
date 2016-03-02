@@ -22,7 +22,9 @@ trace( a.foo );
 
 This is powerful but also very slow as content will get pushed through Strings lookup access when static fields are accessed through hardwired references. And anything involving String is basically slow...
 
-From a performance perspective, "implement Dynamic" could be a problem if it was badly implemented as all typed access could get turned into dynamic accesses. Someone asked me to study whether adding a Dynamic access to a class could degrade performances for Static segment of ths classes.
+From a performance perspective, "implement Dynamic" could be a problem if it was badly implemented as all typed access could get turned into dynamic accesses. 
+
+Someone asked me to study whether adding a Dynamic access to a class could degrade performances for Static segment of ths classes. Would the static fields get contaminated by Dynamic and then generate code that access through reflection rather than static access.
 
 In practice in js and cpp , typed members are correctly typed and accesses and dynamic ones are effectively accessed by reflection.
 
