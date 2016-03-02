@@ -1,7 +1,31 @@
+What is Dynamic ? It stands for Dynamically typed objects. It means you can append any field of any name to a variable disregarding its current typing properties.
 
-From a performance perspective, "implement Dynamic" could be a problem if it was badly implemented as all typed access could get turned into dynamic accesses. 
+When working with Dynamic objects, there is broadly two solutions:
+
+1- Use pure Dynamic objects :
+```
+var a : Dynamic = {};
+a.b = c;
+```
+2- Affix dynamic fields to Staticly typed objects:
+```
+class Foo implements Dynamic {}
+var a : Foo = {};
+a.b = c;
+```
+
+Basically Dynamic fields are accessed through Reflection. Reflection allows to modify variable's structure content via names :
+```
+a["foo"] = 3;
+trace( a.foo );
+```
+
+This is powerful but also very slow as content will get pushed through Strings lookup access when static fields are accessed through hardwired references. And anything involving String is basically slow...
+
+From a performance perspective, "implement Dynamic" could be a problem if it was badly implemented as all typed access could get turned into dynamic accesses. Someone asked me to study whether adding a Dynamic access to a class could degrade performances for Static segment of ths classes.
 
 In practice in js and cpp , typed members are correctly typed and accesses and dynamic ones are effectively accessed by reflection.
+
 
 ```
 class A {
